@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class frmTextEditor
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class frmTextEditor
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.mnuMain = New System.Windows.Forms.MenuStrip()
@@ -29,7 +29,6 @@ Partial Class frmTextEditor
         Me.mnuOpen = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnuSave = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnuSaveAs = New System.Windows.Forms.ToolStripMenuItem()
-        Me.mnuClose = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnuExit = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnuEdit = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnuCopy = New System.Windows.Forms.ToolStripMenuItem()
@@ -39,6 +38,8 @@ Partial Class frmTextEditor
         Me.mnuAbout = New System.Windows.Forms.ToolStripMenuItem()
         Me.txtTextEditor = New System.Windows.Forms.TextBox()
         Me.TextEditorToolTip = New System.Windows.Forms.ToolTip(Me.components)
+        Me.openFileDialog = New System.Windows.Forms.OpenFileDialog()
+        Me.saveFileDialog = New System.Windows.Forms.SaveFileDialog()
         Me.mnuMain.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -57,7 +58,7 @@ Partial Class frmTextEditor
         '
         'mnuFile
         '
-        Me.mnuFile.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnuNew, Me.mnuOpen, Me.mnuSave, Me.mnuSaveAs, Me.mnuClose, Me.mnuExit})
+        Me.mnuFile.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnuNew, Me.mnuOpen, Me.mnuSave, Me.mnuSaveAs, Me.mnuExit})
         Me.mnuFile.Name = "mnuFile"
         Me.mnuFile.Size = New System.Drawing.Size(44, 24)
         Me.mnuFile.Text = "&File"
@@ -93,13 +94,6 @@ Partial Class frmTextEditor
         Me.mnuSaveAs.Text = "Save &As"
         Me.mnuSaveAs.ToolTipText = "Click to save a file"
         '
-        'mnuClose
-        '
-        Me.mnuClose.Name = "mnuClose"
-        Me.mnuClose.Size = New System.Drawing.Size(216, 26)
-        Me.mnuClose.Text = "C&lose"
-        Me.mnuClose.ToolTipText = "Click to close a file"
-        '
         'mnuExit
         '
         Me.mnuExit.Name = "mnuExit"
@@ -118,7 +112,7 @@ Partial Class frmTextEditor
         '
         Me.mnuCopy.Name = "mnuCopy"
         Me.mnuCopy.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.C), System.Windows.Forms.Keys)
-        Me.mnuCopy.Size = New System.Drawing.Size(216, 26)
+        Me.mnuCopy.Size = New System.Drawing.Size(169, 26)
         Me.mnuCopy.Text = "&Copy"
         Me.mnuCopy.ToolTipText = "Click to copy the text"
         '
@@ -126,7 +120,7 @@ Partial Class frmTextEditor
         '
         Me.mnuCut.Name = "mnuCut"
         Me.mnuCut.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.X), System.Windows.Forms.Keys)
-        Me.mnuCut.Size = New System.Drawing.Size(216, 26)
+        Me.mnuCut.Size = New System.Drawing.Size(169, 26)
         Me.mnuCut.Text = "Cu&t"
         Me.mnuCut.ToolTipText = "Click to cut the text"
         '
@@ -134,7 +128,7 @@ Partial Class frmTextEditor
         '
         Me.mnuPaste.Name = "mnuPaste"
         Me.mnuPaste.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.V), System.Windows.Forms.Keys)
-        Me.mnuPaste.Size = New System.Drawing.Size(216, 26)
+        Me.mnuPaste.Size = New System.Drawing.Size(169, 26)
         Me.mnuPaste.Text = "&Paste"
         Me.mnuPaste.ToolTipText = "Click to paste the text"
         '
@@ -154,6 +148,7 @@ Partial Class frmTextEditor
         '
         'txtTextEditor
         '
+        Me.txtTextEditor.AcceptsTab = True
         Me.txtTextEditor.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
@@ -177,7 +172,7 @@ Partial Class frmTextEditor
         Me.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.Name = "frmTextEditor"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Text Editor Select a File to Open"
+        Me.Text = "Text Editor"
         Me.mnuMain.ResumeLayout(False)
         Me.mnuMain.PerformLayout()
         Me.ResumeLayout(False)
@@ -191,7 +186,6 @@ Partial Class frmTextEditor
     Friend WithEvents mnuOpen As ToolStripMenuItem
     Friend WithEvents mnuSave As ToolStripMenuItem
     Friend WithEvents mnuSaveAs As ToolStripMenuItem
-    Friend WithEvents mnuClose As ToolStripMenuItem
     Friend WithEvents mnuExit As ToolStripMenuItem
     Friend WithEvents mnuEdit As ToolStripMenuItem
     Friend WithEvents mnuCopy As ToolStripMenuItem
@@ -201,4 +195,6 @@ Partial Class frmTextEditor
     Friend WithEvents mnuAbout As ToolStripMenuItem
     Friend WithEvents txtTextEditor As TextBox
     Friend WithEvents TextEditorToolTip As ToolTip
+    Friend WithEvents openFileDialog As OpenFileDialog
+    Friend WithEvents saveFileDialog As SaveFileDialog
 End Class
