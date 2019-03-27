@@ -159,6 +159,7 @@ Partial Class frmTextEditor
         Me.txtTextEditor.Size = New System.Drawing.Size(791, 565)
         Me.txtTextEditor.TabIndex = 1
         Me.TextEditorToolTip.SetToolTip(Me.txtTextEditor, "Edit the text")
+        Me.txtTextEditor.WordWrap = False
         '
         'frmTextEditor
         '

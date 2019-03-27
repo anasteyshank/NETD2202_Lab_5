@@ -22,10 +22,8 @@ Public Class frmTextEditor
             openFileDialog.Filter = "txt files (*.txt)|*.txt"
 
             If openFileDialog.ShowDialog() = DialogResult.OK Then
-
-                filePath = openFileDialog.FileName
-                If File.Exists(filePath) Then
-
+                Try
+                    filePath = openFileDialog.FileName
                     Dim fileStream As New FileStream(filePath, FileMode.Open, FileAccess.Read)
                     Dim readStream As New StreamReader(fileStream)
 
@@ -35,7 +33,10 @@ Public Class frmTextEditor
                     RenewTitle()
                     openFileDialog.FileName = String.Empty
                     readStream.Close()
-                End If
+                Catch ex As Exception
+                    MessageBox.Show(ex.ToString())
+                End Try
+
             End If
         End If
 
@@ -50,7 +51,11 @@ Public Class frmTextEditor
             saveFileDialog.Filter = "txt files (*.txt)|*.txt"
 
             If saveFileDialog.ShowDialog = DialogResult.OK Then
-                filePath = saveFileDialog.FileName
+                Try
+                    filePath = saveFileDialog.FileName
+                Catch ex As Exception
+                    MessageBox.Show(ex.ToString())
+                End Try
             Else
                 Exit Sub
             End If
@@ -63,9 +68,14 @@ Public Class frmTextEditor
         Me.Text = "Save As"
         saveFileDialog.Filter = "txt file (*.txt)|*.txt"
         If saveFileDialog.ShowDialog() = DialogResult.OK Then
-            filePath = saveFileDialog.FileName
-            SaveFile(filePath)
-            RenewTitle()
+            Try
+                filePath = saveFileDialog.FileName
+                SaveFile(filePath)
+                RenewTitle()
+            Catch ex As Exception
+                MessageBox.Show(ex.ToString())
+            End Try
+
         End If
     End Sub
 
