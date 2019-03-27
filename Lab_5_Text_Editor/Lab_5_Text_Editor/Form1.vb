@@ -164,7 +164,7 @@ Public Class frmTextEditor
     ''' <param name="sender"></param>
     ''' <param name="e"></param>
     Private Sub mnuAbout_Click(sender As Object, e As EventArgs) Handles mnuAbout.Click
-        MsgBox("NETD2202 - Net Development I" & vbCrLf & vbCrLf & "Lab 5: Text Editor" & vbCrLf & vbCrLf & "Anastasiia Kononirenko" & vbCrLf & vbCrLf & "Created on March 23d 2019", MsgBoxStyle.OkOnly, "About")
+        MsgBox("NETD2202 - Net Development I" & vbCrLf & vbCrLf & "Lab 5: Text Editor" & vbCrLf & vbCrLf & "Anastasiia Kononirenko" & vbCrLf & vbCrLf & "Created on March 27th 2019", MsgBoxStyle.OkOnly, "About")
     End Sub
 
     ''' <summary>
